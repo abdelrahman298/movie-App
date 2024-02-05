@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Movie App</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <!-- !=============== Nav Bar ====================-->
+    <section id="navbar-side" class="navbar-section">
+      <div id="nav-bar" class="nav-bar">
+        <div class="d-flex flex-column justify-content-between h-100">
+          <nav class="navbar d-none">
+            <ul class="navbar-nav d-flex flex-column justify-content-start">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  targetPage="nowPlayingPage"
+                  aria-current="page"
+                  href="#"
+                  >Now Playing</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" targetPage="PopularPage" href="#"
+                  >Popular</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" targetPage="topRatedPage" href="#"
+                  >Top Rated</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" targetPage="terendingPage" href="#"
+                  >Trending</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" targetPage="upComingPage" href="#"
+                  >Upcoming</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" targetPage="contactUsPage" href="#"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="social-contents d-none">
+            <div class="social-platforms">
+              <a href=""><i class="fab fa-facebook"></i></a>
+              <a href=""> <i class="fab fa-twitter"></i> </a>
+              <a href=""> <i class="fas fa-globe"></i> </a>
+            </div>
+            <div class="copyright">
+              <p>Copyright Â© 2019 All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-toggle-bar text-white">
+        <div class="nav-brand">
+          <img src="img/logo.png" alt="Logo Brand" />
+        </div>
+        <div id="nav-toggle-icon" class="nav-toggle-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-share d-flex flex-column text-black">
+          <a href=""> <i class="fas fa-globe mb-2"></i></a>
+          <a href=""> <i class="fas fa-share-nodes"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- !=============== main Body ====================-->
+    <section id="main-section">
+      <!-- ?==============> fixed search Bar <============== -->
+      <div id="searchPage" class="search-page page">
+        <div class="container">
+          <div class="searchBar-container mb-5">
+            <input
+              id="searchByName"
+              oninput="searchMealbyName()"
+              type="search"
+              class="form-control"
+              placeholder="Search By Name"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- ?==============> main Page which will display the pages <============== -->
+      <div id="mainPage" class="main-page">
+        <div class="container">
+          <div class="row g-4">
+            <!-- ?=======>this COL consists of the item of movie card <========= -->
+            <!-- <div class="col-sm-12 col-md-6 col-lg-4">
+              <div id="imgContainer" class="img-container h-100 w-100">
+                <img class="h-100 w-100 rounded-2" src="img/1.jpg" alt="" />
+                <div
+                  id="imgLayout"
+                  class="img-layout d-flex flex-column justify-content-start align-items-start rounded-2"
+                >
+                  <p
+                    id="layoutTitle"
+                    class="layout-title text-center invisible animate__animated"
+                  >
+                    Aquaman and the Lost Kingdom
+                  </p>
+                  <p
+                    id="layoutDesc"
+                    class="layout-desc invisible animate__animated"
+                  >
+                    Black Manta, still driven by the need to avenge his father's
+                    death and wielding the power of the mythic Black Trident,
+                    will stop at nothing to take Aquaman down once and for all.
+                    To defeat him, Aquaman must turn to his imprisoned brother
+                    Orm, the former King of Atlantis, to forge an unlikely
+                    allianc...
+                  </p>
+                  <p
+                    id="layoutDate"
+                    class="layout-date invisible animate__animated"
+                  >
+                    Release Date : 2023-12-20
+                  </p>
+                  <p
+                    id="rateStar"
+                    class="rate-satr invisible animate__animated"
+                  >
+                    <i class="fa-solid fa-star text-warning fs-6"></i
+                    ><i class="fa-solid fa-star text-warning fs-6"></i
+                    ><i class="fa-solid fa-star text-warning fs-6"></i>
+                  </p>
+                  <p
+                    id="rateNum"
+                    class="rate-num invisible vote animate__animated"
+                  >
+                    7.0
+                  </p>
+                </div>
+              </div>
+            </div> -->
+            <!-- ?=======>The End  COL consists of the item of movie card <========= -->
+          </div>
+        </div>
+      </div>
+      <!-- ?==============> fixed Contact Us Section <============== -->
+
+      <div id="contactUs" class="contact us">
+        <form>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control input-style"
+                    id="userName"
+                    placeholder="Enter Your Name"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control input-style"
+                    id="email"
+                    placeholder="Enter Your Email"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    type="number"
+                    class="form-control input-style"
+                    id="phoneNumber"
+                    placeholder="Enter Your Phone"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    type="number"
+                    class="form-control input-style"
+                    id="userAge"
+                    placeholder="Enter Your Age"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    type="password"
+                    class="form-control input-style"
+                    id="firstPassword"
+                    placeholder="Enter Your Password"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    type="password"
+                    class="form-control input-style"
+                    id="secondPassword"
+                    placeholder="ReEnter Your Password"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <div class="mb-3">
+                  <input
+                    id="submitButton"
+                    class="btn btn-style text-white"
+                    type=""
+                    value="Submit"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script type="module" src="./js/scripts/script.js"></script>
+    <!-- <script type="module" src="./classes/mealDetail.js"></script> -->
+  </body>
+</html>
+
+<!-- * ممكن استخدمها لو هحتاج انى اظهر النتيجة بتاعة البحث -->
+<!-- <div id="searchResult" class="search-result">
+            <div class="container">
+              <div class="row g-4">
+                <!-- <div class="col-sm-12 col-md-6 col-lg-3">
+                  <div class="img-container h-100 w-100">
+                    <img class="h-100 w-100 rounded-2" src="img/1.jpg" alt="" />
+                    <div
+                      class="img-layout d-flex flex-column justify-content-center align-items-center rounded-2"
+                    >
+                      <p class="layout-content">Corba</p>
+                    </div>
+                  </div>
+                </div> -->
+<!-- </div>
+            </div> -->
+<!-- </div> -->
